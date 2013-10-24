@@ -1,0 +1,4 @@
+org.apache.whirr.service.storm.StormNimbusClusterActionHandler
+org.apache.whirr.service.storm.StormSupervisorClusterActionHandler
+org.apache.whirr.service.storm.StormUIClusterActionHandler
+org.apache.whirr.service.storm.BaseClusterActionHandler
