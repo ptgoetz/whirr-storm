@@ -18,6 +18,11 @@ then
     sudo mv /usr/share/storm/conf/storm.yaml /etc/storm/
     sudo ln -s /etc/storm/storm.yaml /usr/share/storm/conf/storm.yaml
 
+    sudo mkdir /var/log/storm
+    sudo chown storm:storm /var/log/storm
+
+    sudo sed -i 's/${storm.home}\/logs/\/var\/log\/storm/g' /usr/share/storm/logback/cluster.xml
+
     echo "storm.messaging.transport: \"backtype.storm.messaging.netty.Context\"" | sudo tee -a /etc/storm/storm.yaml
     echo "storm.messaging.netty.buffer_size: 16384" | sudo tee -a /etc/storm/storm.yaml
     echo "storm.messaging.netty.max_retries: 10" | sudo tee -a /etc/storm/storm.yaml
