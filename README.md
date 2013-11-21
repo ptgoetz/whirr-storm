@@ -34,7 +34,7 @@ echo "CREDENTIAL=[your EC2 Secret Access Key]" >> ~/.whirr/credentials
 Add Whirr-Storm service JAR to Whirr's lib directory:
 
 ```
-cp whirr-storm-0.1.0.jar $WHIR_HOME/lib
+wget http://repo1.maven.org/maven2/com/github/ptgoetz/whirr-storm/0.1.0/whirr-storm-0.1.0.jar -P lib
 ```
 
 Create a `storm.properties` cluster configuration file:
@@ -112,4 +112,5 @@ When you are finished with the cluster, shut it down:
  * Add support for role-based firewall rules (e.g. open ports between supervisors and cassandra nodes if there are
  "cassandra" roles in the cluster.
  * Add support for 0mq.
+ * Add OSGi support.
  * More documentation.
